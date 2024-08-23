@@ -1,0 +1,36 @@
+<!-- sign-up.component.html -->
+<form (ngSubmit)="onSubmit()">
+  <div *ngIf="step === 1">
+    <label for="emailOrPhone">Email or Phone:</label>
+    <input type="text" id="emailOrPhone" name="emailOrPhone" required />
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required />
+
+    <label for="password">Password:</label>
+    <input type="password" id="password"  name="password" required />
+
+    <button type="button" (click)="onContinue()">Continue</button>
+  </div>
+
+  <div *ngIf="step === 2">
+    <label for="organization">Organization:</label>
+    <input type="text" id="organization" name="organization" required />
+    <div *ngIf="organizationError">{{ organizationError }}</div>
+
+    <label for="designation">Designation:</label>
+    <input type="text" id="designation" name="designation" required />
+
+    <label for="birthdate">Birthdate:</label>
+    <input type="date" id="birthdate"  name="birthdate" required />
+
+    <label for="city">City:</label>
+    <input type="text" id="city"  name="city" required />
+
+    <label for="pincode">Pincode:</label>
+    <input type="text" id="pincode"  name="pincode" required />
+
+    <button type="button" (click)="onBack()">Back</button>
+    <button type="submit">Submit</button>
+  </div>
+</form>
